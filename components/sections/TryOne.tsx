@@ -1,4 +1,5 @@
 import type { Prompt } from "@/lib/types";
+import { withBase } from "@/lib/asset";
 import { CopyButton } from "../CopyButton";
 import { Reveal } from "../Reveal";
 
@@ -16,9 +17,8 @@ export function TryOne({ prompt }: { prompt: Prompt }) {
 
       <Reveal delay={0.1} className="mt-12">
         <article className="mx-auto grid max-w-4xl overflow-hidden rounded-xl bg-paper shadow-card shadow-ring md:grid-cols-[2fr_3fr]">
-          {/* TODO: replace picsum placeholder with a real AI-generated preview */}
           <img
-            src={prompt.image}
+            src={withBase(prompt.image)}
             alt={prompt.title}
             width={800}
             height={800}

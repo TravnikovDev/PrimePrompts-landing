@@ -1,4 +1,5 @@
 import type { Prompt } from "@/lib/types";
+import { withBase } from "@/lib/asset";
 import { Reveal } from "../Reveal";
 
 const tilts = [
@@ -33,9 +34,8 @@ export function Trending({ prompts }: { prompts: Prompt[] }) {
               className={`w-56 shrink-0 snap-center md:hover:z-10 ${tilts[i % tilts.length]}`}
             >
               <div className="overflow-hidden rounded-[24px] border-4 border-obsidian bg-paper transition-transform duration-300 hover:rotate-0 hover:scale-105">
-                {/* TODO: replace picsum placeholder with a real AI-generated preview */}
                 <img
-                  src={prompt.image}
+                  src={withBase(prompt.image)}
                   alt={prompt.title}
                   width={640}
                   height={800}

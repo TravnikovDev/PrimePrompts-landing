@@ -5,7 +5,7 @@
     "description": "A playful quiz that reads you better than your friends do.",
     "promptText": "Ask me 10 quick questions, one at a time. Then tell me which decade my personality belongs in, and explain why with a bit of humor.",
     "category": "Personality Tests",
-    "image": "https://picsum.photos/seed/primeprompts-decade-quiz/800/800"
+    "image": "/images/prompts/decade-personality.jpg"
   },
   "trending": [
     {
@@ -14,7 +14,7 @@
       "description": "The classic. Works in any image generator.",
       "promptText": "A renaissance oil painting portrait of [describe yourself], dramatic candlelight, rich fabrics, ornate gold frame, museum quality.",
       "category": "Image Prompts",
-      "image": "https://picsum.photos/seed/primeprompts-renaissance/640/800"
+      "image": "/images/prompts/renaissance-portrait.jpg"
     },
     {
       "id": "movie-trailer-day",
@@ -22,7 +22,7 @@
       "description": "Make your Tuesday sound like a blockbuster.",
       "promptText": "Write a dramatic movie trailer voiceover script about my ordinary day. I will describe my day, you make it sound epic.",
       "category": "Creative Ideas",
-      "image": "https://picsum.photos/seed/primeprompts-trailer/640/800"
+      "image": "/images/prompts/movie-trailer-day.jpg"
     },
     {
       "id": "dinner-party-test",
@@ -30,7 +30,7 @@
       "description": "Five guests, living or dead. What do your picks say about you?",
       "promptText": "Ask me to pick 5 dinner guests, living or dead. Then analyze what my choices say about my personality.",
       "category": "Personality Tests",
-      "image": "https://picsum.photos/seed/primeprompts-dinner/640/800"
+      "image": "/images/prompts/dinner-party-test.jpg"
     },
     {
       "id": "tiny-desk-dragon",
@@ -38,7 +38,7 @@
       "description": "Everyone needs a desk pet.",
       "promptText": "A tiny fluffy dragon the size of a hamster sleeping on a cluttered office desk, soft morning light, photorealistic macro shot.",
       "category": "Image Prompts",
-      "image": "https://picsum.photos/seed/primeprompts-dragon/640/800"
+      "image": "/images/prompts/tiny-desk-dragon.jpg"
     },
     {
       "id": "roast-my-fridge",
@@ -46,7 +46,7 @@
       "description": "Honest feedback on your life choices, plus dinner.",
       "promptText": "I will list what is in my fridge. Rate my life choices based on it, then suggest one dinner I can actually make tonight.",
       "category": "Creative Ideas",
-      "image": "https://picsum.photos/seed/primeprompts-fridge/640/800"
+      "image": "/images/prompts/roast-my-fridge.jpg"
     },
     {
       "id": "yearbook-90s",
@@ -54,7 +54,7 @@
       "description": "Laser background included, obviously.",
       "promptText": "A 1990s high school yearbook portrait of [describe yourself], soft studio lighting, laser beam background, slight film grain.",
       "category": "Image Prompts",
-      "image": "https://picsum.photos/seed/primeprompts-yearbook/640/800"
+      "image": "/images/prompts/yearbook-90s.jpg"
     }
   ],
   "categories": [
@@ -62,25 +62,25 @@
       "id": "personality-tests",
       "name": "Personality Tests",
       "blurb": "Quizzes and questions that tell you something new about yourself.",
-      "image": "https://picsum.photos/seed/primeprompts-cat-personality/1200/800"
+      "image": "/images/prompts/cat-personality-tests.jpg"
     },
     {
       "id": "image-prompts",
       "name": "Image Prompts",
       "blurb": "Ready-made ideas for any image generator.",
-      "image": "https://picsum.photos/seed/primeprompts-cat-images/800/600"
+      "image": "/images/prompts/cat-image-prompts.jpg"
     },
     {
       "id": "creative-ideas",
       "name": "Creative Ideas",
       "blurb": "Stories, games and experiments to try in a chat.",
-      "image": "https://picsum.photos/seed/primeprompts-cat-creative/800/600"
+      "image": "/images/prompts/cat-creative-ideas.jpg"
     },
     {
       "id": "trending",
       "name": "Trending",
       "blurb": "What everyone is trying this week.",
-      "image": "https://picsum.photos/seed/primeprompts-cat-trending/1200/800"
+      "image": "/images/prompts/cat-trending.jpg"
     }
   ]
 }

@@ -1,12 +1,12 @@
 import type { Category } from "@/lib/types";
+import { withBase } from "@/lib/asset";
 import { Reveal } from "../Reveal";
 
 function Tile({ category, wide }: { category: Category; wide?: boolean }) {
   return (
     <article className={`flex flex-col gap-3 ${wide ? "md:col-span-2" : ""}`}>
-      {/* TODO: replace picsum placeholder with a real AI-generated preview */}
       <img
-        src={category.image}
+        src={withBase(category.image)}
         alt={category.name}
         width={wide ? 1200 : 800}
         height={wide ? 800 : 600}

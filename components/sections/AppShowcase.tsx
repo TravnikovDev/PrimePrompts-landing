@@ -5,14 +5,14 @@ import {
   Star,
 } from "@phosphor-icons/react/dist/ssr";
 import type { Prompt } from "@/lib/types";
+import { withBase } from "@/lib/asset";
 import { Reveal } from "../Reveal";
 
 function FeedCard({ prompt }: { prompt: Prompt }) {
   return (
     <div className="overflow-hidden rounded-2xl border border-ash bg-paper">
-      {/* TODO: replace picsum placeholder with a real AI-generated preview */}
       <img
-        src={prompt.image}
+        src={withBase(prompt.image)}
         alt=""
         width={640}
         height={400}
