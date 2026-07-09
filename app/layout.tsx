@@ -26,6 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://primeprompts.app"),
   title: "Prime Prompts. Fun AI ideas, ready to copy.",
   description:
     "A daily feed of trending AI prompts. Copy one, paste it into ChatGPT, Gemini, Claude or any image generator, and see what happens.",

@@ -2,12 +2,12 @@ import type { Prompt } from "@/lib/types";
 import { Reveal } from "../Reveal";
 
 const tilts = [
-  "-rotate-6",
-  "rotate-3",
-  "-rotate-2",
-  "rotate-6",
-  "-rotate-3",
+  "-rotate-4",
   "rotate-2",
+  "-rotate-2",
+  "rotate-4",
+  "-rotate-3",
+  "rotate-3",
 ] as const;
 
 // Fanned, tilted showcase band per DESIGN.md's phone-mockup carousel:
@@ -26,11 +26,11 @@ export function Trending({ prompts }: { prompts: Prompt[] }) {
       </Reveal>
 
       <Reveal delay={0.1}>
-        <div className="mt-16 flex snap-x snap-mandatory gap-2 overflow-x-auto px-8 py-10 md:justify-center md:gap-0 md:overflow-visible">
+        <div className="mt-16 flex snap-x snap-mandatory gap-4 overflow-x-auto px-8 py-10 md:justify-center md:gap-3 md:overflow-visible">
           {prompts.map((prompt, i) => (
             <div
               key={prompt.id}
-              className={`w-52 shrink-0 snap-center md:-mx-2 md:hover:z-10 ${tilts[i % tilts.length]}`}
+              className={`w-56 shrink-0 snap-center md:hover:z-10 ${tilts[i % tilts.length]}`}
             >
               <div className="overflow-hidden rounded-[24px] border-4 border-obsidian bg-paper transition-transform duration-300 hover:rotate-0 hover:scale-105">
                 {/* TODO: replace picsum placeholder with a real AI-generated preview */}
@@ -43,7 +43,7 @@ export function Trending({ prompts }: { prompts: Prompt[] }) {
                   className="aspect-3/4 w-full object-cover"
                 />
                 <div className="flex flex-col gap-1 p-4">
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.05em] text-volt">
+                  <span className="text-xs font-semibold uppercase tracking-[0.05em] text-volt">
                     {prompt.category}
                   </span>
                   <p className="text-sm font-bold leading-tight">

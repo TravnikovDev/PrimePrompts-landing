@@ -47,12 +47,14 @@ body {
 }
 
 /* The hero is the system's single moment of color abundance: lavender, sky,
-   coral and amber blended like a sunset through frosted glass. Never reuse. */
+   coral and amber blended like a sunset through frosted glass, fading to the
+   white page canvas at the bottom. Never reuse on other sections. */
 .hero-gradient {
   background:
-    radial-gradient(65% 80% at 12% 8%, #c4b5fd 0%, transparent 60%),
-    radial-gradient(55% 70% at 88% 12%, #7dd3fc 0%, transparent 58%),
-    radial-gradient(60% 70% at 15% 92%, #fda4af 0%, transparent 55%),
-    radial-gradient(60% 70% at 85% 88%, #fcd34d 0%, transparent 58%),
-    linear-gradient(135deg, #ddd6fe 0%, #bae6fd 40%, #fecdd3 75%, #fde68a 100%);
+    linear-gradient(to bottom, rgba(255, 255, 255, 0) 45%, #ffffff 95%),
+    radial-gradient(65% 80% at 12% 8%, #ddd3fc 0%, transparent 60%),
+    radial-gradient(55% 70% at 88% 12%, #bce5fc 0%, transparent 58%),
+    radial-gradient(60% 70% at 15% 92%, #fed7dc 0%, transparent 55%),
+    radial-gradient(60% 70% at 85% 88%, #fdeab4 0%, transparent 58%),
+    linear-gradient(135deg, #eae5fd 0%, #dcf0fc 40%, #fee3e6 75%, #fdf1cd 100%);
 }

@@ -9,28 +9,29 @@ Goal: ship primeprompts.app. Visual system per [DESIGN.md](DESIGN.md) (mapping i
 Ordered by impact on installs.
 
 ### Product visibility (highest impact)
-- [ ] **Show the actual app.** Add a large phone mockup with a real app screen (Trending feed) directly under the hero badges, overlapping the gradient-to-white transition, like the reference's device shot. Until real app screenshots exist, compose the screen from the landing's own card components as an honest stand-in and mark it as mockup
-- [ ] **Replace all picsum placeholders with real AI-generated previews.** Every trending card, the featured "try one" image, and all 4 category tiles need on-topic imagery (the coyote and beach photos actively hurt). Keep one consistent visual style across the set
-- [ ] **Official store badges.** Swap the generic pill buttons for Apple's "Download on the App Store" and Google's "GET IT ON Google Play" badge assets (both dark variants, per DESIGN.md badge-pair component). Wire real store URLs when published
+- [x] **Show the actual app.** Phone mockup with a Trending-feed screen composed from the landing's own card components ([AppShowcase.tsx](components/sections/AppShowcase.tsx)); swap in real app screenshots when they exist
+- [ ] **Replace all picsum placeholders with real AI-generated previews.** Every trending card, the featured "try one" image, the phone-feed cards, and all 4 category tiles need on-topic imagery in one consistent style. **Needs generated assets from Roman** (no image-gen tool in this environment)
+- [x] **Official store badges.** Apple + Google badge artwork in `public/badges/`, used in hero and final CTA
+  - [ ] Wire real store URLs when the app is published (currently `href="#"`)
 
 ### Hero composition
-- [ ] **Tame the gradient.** Desaturate toward the reference's softer field and fade it to white at the bottom so the hero hands off into the white content bands instead of ending at a hard edge
-- [ ] **Compact the hero.** Drop `min-h-[100dvh]` centering; top-align the stack (pill → headline → subtext → badges) so the trust strip and phone mockup enter the first scroll, like the reference
+- [x] **Tame the gradient** — softer pastels, fades to white at the bottom
+- [x] **Compact the hero** — top-aligned stack; trust strip and phone mockup enter the first scroll
 
 ### Credibility
-- [ ] **Give the trust strip real proof points.** Replace the how-it-works repeat with true claims (e.g. "New prompts curated daily", "Works with ChatGPT, Gemini, Claude and more", "Free, no account"). Swap in real numbers (installs, prompt count, rating) as soon as they exist; never fake them
-- [ ] Keep how-it-works as its own light section further down (or fold into Try One) so the strip and the steps don't duplicate
+- [x] **Trust strip with real claims** — hand-curated daily / works with any AI tool / free, no account
+  - [ ] Swap in real numbers (installs, prompt count, rating) once they exist; never fake them
 
 ### Completeness / trust
-- [ ] **Full black footer block** per reference: logo mark, Download column (App Store / Google Play), Social column (TikTok / Instagram / Pinterest once they exist), Useful pages column (Privacy Policy, Terms), © line
-- [ ] **Privacy Policy + Terms pages** (`/privacy`, `/terms`) — required for App Store / Google Play review anyway
-- [ ] **Favicon + logo mark** (simple glyph that works in the black nav pill) and **OG share image** (prompt card composition, not just the wordmark)
-- [ ] **Mobile nav menu** — links currently vanish below `md`; add a hamburger sheet or an equally deliberate reduction
+- [x] **Full black footer block** — brand + blurb + ©, Download column, Pages column (Privacy, Terms, Contact); add a Social column once accounts exist
+- [x] **Privacy Policy + Terms pages** (`/privacy`, `/terms`)
+- [x] **Favicon** (`app/icon.svg`) and **OG share image** (`app/opengraph-image.tsx`, build-time generated)
+- [x] **Mobile nav menu** — hamburger sheet below `md`
 
 ### Polish
-- [ ] **Loosen scroll-reveal thresholds** — sections render blank mid-scroll (`amount: 0.3` is too strict for tall blocks; use a smaller amount or `margin`); page must never look empty during fast scroll or full-page capture
-- [ ] **Trending fan breathing room** — reduce overlap, bump the 10px category labels to a readable size, fix the low-contrast caption under the band
-- [ ] **Category tile rhythm** — equalize text-block heights and align the grid; standardize section gaps to the 80px system token
+- [x] **Loosened scroll-reveal thresholds** (`amount: 0.1`)
+- [x] **Trending fan breathing room** — less overlap, softer tilts, labels bumped to 12px
+- [ ] **Category tile rhythm** — equalize text-block heights across bento tiles (minor, revisit with real imagery)
 
 ## Phase B — GitHub & deploy (blocked on auth)
 

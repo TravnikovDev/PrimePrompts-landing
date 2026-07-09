@@ -7,12 +7,12 @@ export function Hero() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="hero-gradient flex min-h-[100dvh] items-center justify-center px-4 pt-24 pb-16">
+    <section className="hero-gradient px-4 pt-32 pb-6">
       <motion.div
         initial={reduce ? false : { opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="flex max-w-[1200px] flex-col items-center gap-8 text-center"
+        className="mx-auto flex max-w-[1200px] flex-col items-center gap-7 text-center"
       >
         <a
           href="#trending"
@@ -24,7 +24,7 @@ export function Hero() {
           Fresh prompts added daily
         </a>
 
-        <h1 className="font-display text-5xl uppercase leading-[0.95] tracking-[-0.01em] md:text-7xl lg:text-[86px] lg:leading-[0.9]">
+        <h1 className="font-display text-5xl uppercase leading-[0.95] tracking-[-0.01em] md:text-7xl">
           Fun AI ideas,{" "}
           <br className="hidden md:block" />
           ready to copy
