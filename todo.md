@@ -33,12 +33,12 @@ Ordered by impact on installs.
 - [x] **Trending fan breathing room** — less overlap, softer tilts, labels bumped to 12px
 - [ ] **Category tile rhythm** — equalize text-block heights across bento tiles (minor, revisit with real imagery)
 
-## Phase B — GitHub & deploy (blocked on auth)
+## Phase B — GitHub & deploy
 
 - [x] git init, commits, SSH remote configured
 - [x] GitHub Actions workflow for Pages (static export, `BASE_PATH`)
-- [ ] **Blocked:** create `TravnikovDev/PrimePrompts-landing` repo — needs `gh auth login` (then Claude finishes: create, push, enable Pages) or manual repo creation at github.com/new
-- [ ] Push + verify live at travnikovdev.github.io/PrimePrompts-landing
+- [x] Repo created (by Roman), Pages enabled, deploys green
+- [x] Live at https://travnikovdev.github.io/PrimePrompts-landing/ (incl. /privacy/, /terms/, badges, OG image)
 - [ ] Later: point primeprompts.app custom domain, remove `BASE_PATH` from workflow
 
 ## Phase C — CTA & content finalization
@@ -59,9 +59,9 @@ Ordered by impact on installs.
 
 ## Phase E — SEO & launch
 
-- [ ] Meta title/description finalized, OpenGraph + Twitter cards with the new OG image
-- [ ] Structured data: `MobileApplication` JSON-LD
-- [ ] `sitemap.xml` + `robots.txt`
+- [x] Meta title/description, OpenGraph + Twitter cards (build-time OG image)
+- [x] Structured data: `MobileApplication` JSON-LD
+- [x] `sitemap.xml` + `robots.txt` (URLs point at primeprompts.app, the canonical future domain)
 - [ ] Verify OG cards render in Telegram/WhatsApp/iMessage previews
 - [ ] Analytics: lightweight, cookieless (Plausible/Umami) — track badge clicks and prompt copies; add DESIGN.md cookie-consent card only if a cookie-setting tool is ever added
 

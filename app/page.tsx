@@ -10,9 +10,25 @@ import { Trending } from "@/components/sections/Trending";
 import { Reassurance } from "@/components/sections/Reassurance";
 import { FinalCta } from "@/components/sections/FinalCta";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  name: "Prime Prompts",
+  description:
+    "A curated feed of fun and trending AI prompts. Copy one, paste it into ChatGPT, Gemini, Claude or any image generator.",
+  operatingSystem: "iOS, Android",
+  applicationCategory: "EntertainmentApplication",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  url: "https://primeprompts.app",
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Nav />
       <main>
         <Hero />
