@@ -1,77 +1,81 @@
 # Prime Prompts Landing — TODO
 
-Goal: ship primeprompts.app. Design and structure per [styleguide.md](styleguide.md), product context in [whitePaper.md](whitePaper.md).
+Goal: ship primeprompts.app. Visual system per [DESIGN.md](DESIGN.md) (mapping in [styleguide.md](styleguide.md)), product context in [whitePaper.md](whitePaper.md).
 
-> **Open decision (blocks Phase 3):** primary CTA is App Store / Google Play badges if the app is live, or an email waitlist if pre-launch. Build badges first with an easy waitlist toggle unless decided otherwise.
+> **Open decision (blocks CTA wiring):** primary CTA is App Store / Google Play badges if the app is live, or an email waitlist if pre-launch. Built badges-first with an easy waitlist toggle.
 
-## Phase 0 — Project Setup
+## Phase A — Design QA fixes (vs Wizz reference, 2026-07-09)
 
-- [ ] `git init` + first commit (white paper, styleguide, todo)
-- [ ] Scaffold Next.js (App Router, TypeScript) with Tailwind v4
-- [ ] Configure static export (`output: "export"`) — no server needed for a brochure page
-- [ ] Install deps: `motion`, `@phosphor-icons/react`
-- [ ] Set up fonts via `next/font`: Outfit (400/500/600/700), JetBrains Mono (400)
-- [ ] Define CSS variable tokens from styleguide (light + dark) in `globals.css`
-- [ ] Base layout: `<html>` metadata, theme tokens, `max-w-6xl` container
+Ordered by impact on installs.
 
-## Phase 1 — Content & Assets (can run parallel to Phase 2)
+### Product visibility (highest impact)
+- [ ] **Show the actual app.** Add a large phone mockup with a real app screen (Trending feed) directly under the hero badges, overlapping the gradient-to-white transition, like the reference's device shot. Until real app screenshots exist, compose the screen from the landing's own card components as an honest stand-in and mark it as mockup
+- [ ] **Replace all picsum placeholders with real AI-generated previews.** Every trending card, the featured "try one" image, and all 4 category tiles need on-topic imagery (the coyote and beach photos actively hurt). Keep one consistent visual style across the set
+- [ ] **Official store badges.** Swap the generic pill buttons for Apple's "Download on the App Store" and Google's "GET IT ON Google Play" badge assets (both dark variants, per DESIGN.md badge-pair component). Wire real store URLs when published
 
-- [ ] Write final copy for all 7 sections (headline, subtext, step labels, reassurance lines, final CTA) — run against styleguide voice rules
-- [ ] Pick 8–10 real prompts from the app's initial content base for the landing:
-  - [ ] 1 hero-worthy personality-test prompt for the "Try one now" section
-  - [ ] 5–6 for the Trending row
-  - [ ] 4 category-representative ones for the bento
-- [ ] Generate AI preview images for each selected prompt (4:5 or 1:1, consistent visual style)
-- [ ] Compose the hero phone-mockup screen from real cards (screenshot from the app build, or composited frame)
-- [ ] Logo / wordmark for nav and footer
-- [ ] Favicon + OG image (OG shows a prompt card, not just the logo)
-- [ ] `prompts.json` data file: title, description, promptText, category, image path
+### Hero composition
+- [ ] **Tame the gradient.** Desaturate toward the reference's softer field and fade it to white at the bottom so the hero hands off into the white content bands instead of ending at a hard edge
+- [ ] **Compact the hero.** Drop `min-h-[100dvh]` centering; top-align the stack (pill → headline → subtext → badges) so the trust strip and phone mockup enter the first scroll, like the reference
 
-## Phase 2 — Build Sections
+### Credibility
+- [ ] **Give the trust strip real proof points.** Replace the how-it-works repeat with true claims (e.g. "New prompts curated daily", "Works with ChatGPT, Gemini, Claude and more", "Free, no account"). Swap in real numbers (installs, prompt count, rating) as soon as they exist; never fake them
+- [ ] Keep how-it-works as its own light section further down (or fold into Try One) so the strip and the steps don't duplicate
 
-- [ ] **Nav:** logo left, single install CTA right, ≤ 72px tall, one line
-- [ ] **Hero:** asymmetric split, text left / phone right, entrance animation, badges visible without scroll, `min-h-[100dvh]`
-- [ ] **Try one now:** oversized PromptCard with working Copy button (Clipboard API + spring feedback + "Copied" state morph)
-- [ ] **How it works:** connected 3-step strip (Browse → Copy → Paste anywhere) with real mini-screenshots; tool-agnostic line
-- [ ] **Categories bento:** exactly 4 cells (1 large + 3 small), real background images per cell
-- [ ] **Trending row:** scroll-snap horizontal cards fed from `prompts.json`
-- [ ] **Reassurance:** plain stack — free, no account, no AI knowledge needed
-- [ ] **Final CTA:** centered manifesto headline + store badges
-- [ ] **Footer:** logo, contact email, privacy + terms links
-- [ ] Shared `PromptCard` component (used by sections 2, 4, 5)
-- [ ] Scroll-reveal wrapper (`whileInView`, once, reduced-motion safe)
+### Completeness / trust
+- [ ] **Full black footer block** per reference: logo mark, Download column (App Store / Google Play), Social column (TikTok / Instagram / Pinterest once they exist), Useful pages column (Privacy Policy, Terms), © line
+- [ ] **Privacy Policy + Terms pages** (`/privacy`, `/terms`) — required for App Store / Google Play review anyway
+- [ ] **Favicon + logo mark** (simple glyph that works in the black nav pill) and **OG share image** (prompt card composition, not just the wordmark)
+- [ ] **Mobile nav menu** — links currently vanish below `md`; add a hamburger sheet or an equally deliberate reduction
 
-## Phase 3 — CTA & Legal
+### Polish
+- [ ] **Loosen scroll-reveal thresholds** — sections render blank mid-scroll (`amount: 0.3` is too strict for tall blocks; use a smaller amount or `margin`); page must never look empty during fast scroll or full-page capture
+- [ ] **Trending fan breathing room** — reduce overlap, bump the 10px category labels to a readable size, fix the low-contrast caption under the band
+- [ ] **Category tile rhythm** — equalize text-block heights and align the grid; standardize section gaps to the 80px system token
 
-- [ ] Resolve the badges-vs-waitlist decision; wire final store links or waitlist form
-- [ ] If waitlist: form with proper label, inline validation, success + error states (no placeholder-as-label)
-- [ ] Privacy policy page (`/privacy`) — required for App Store / Google Play review anyway
-- [ ] Terms page (`/terms`)
+## Phase B — GitHub & deploy (blocked on auth)
 
-## Phase 4 — Polish & QA
+- [x] git init, commits, SSH remote configured
+- [x] GitHub Actions workflow for Pages (static export, `BASE_PATH`)
+- [ ] **Blocked:** create `TravnikovDev/PrimePrompts-landing` repo — needs `gh auth login` (then Claude finishes: create, push, enable Pages) or manual repo creation at github.com/new
+- [ ] Push + verify live at travnikovdev.github.io/PrimePrompts-landing
+- [ ] Later: point primeprompts.app custom domain, remove `BASE_PATH` from workflow
 
-- [ ] Dark mode pass: every section checked in both themes
-- [ ] Mobile pass at 375px: hero stacks, bento collapses, trending row swipes, nothing overflows
+## Phase C — CTA & content finalization
+
+- [ ] Resolve badges-vs-waitlist decision; wire final store links or waitlist form
+- [ ] If waitlist: form with proper label, inline validation, success + error states
+- [ ] Final copy pass over all sections (voice rules in styleguide)
+- [ ] Weekly "Trending this week" refresh routine (edit [data/prompts.json](data/prompts.json))
+
+## Phase D — Pre-launch QA
+
+- [ ] Mobile pass at 375px after Phase A changes (fan band, phone mockup, footer columns)
 - [ ] `prefers-reduced-motion` pass: page fully usable static
 - [ ] Keyboard + focus-ring pass over all interactive elements
-- [ ] Contrast audit: rose CTA text, muted text, both themes (WCAG AA)
+- [ ] Contrast audit: volt CTA text, charcoal body on white, black-on-gradient (WCAG AA)
 - [ ] Copy self-audit: reread every visible string; zero em-dashes, no filler verbs, no fake numbers
-- [ ] Lighthouse: LCP < 2.5s, CLS < 0.1, INP < 200ms; hero image `priority`, below-fold lazy
-- [ ] Styleguide pre-flight: one accent everywhere, one radius system, no repeated section layouts
+- [ ] Lighthouse: LCP < 2.5s, CLS < 0.1, INP < 200ms; hero assets priority, below-fold lazy
 
-## Phase 5 — SEO & Launch
+## Phase E — SEO & launch
 
-- [ ] Meta title/description, OpenGraph + Twitter cards
+- [ ] Meta title/description finalized, OpenGraph + Twitter cards with the new OG image
 - [ ] Structured data: `MobileApplication` JSON-LD
 - [ ] `sitemap.xml` + `robots.txt`
-- [ ] Deploy (Vercel or any static host) + point primeprompts.app DNS
 - [ ] Verify OG cards render in Telegram/WhatsApp/iMessage previews
-- [ ] Analytics: lightweight, cookieless (e.g. Plausible/Umami) — track badge clicks and prompt copies
+- [ ] Analytics: lightweight, cookieless (Plausible/Umami) — track badge clicks and prompt copies; add DESIGN.md cookie-consent card only if a cookie-setting tool is ever added
+
+## Done
+
+- [x] Next.js scaffold: App Router, TypeScript, static export, Tailwind v4, Motion, Phosphor
+- [x] Wizz reskin per DESIGN.md: gradient hero, Archivo Black display type, floating black pill nav, volt pink sole accent, tilted showcase band, trust strip, mission row, pill footer
+- [x] Working Copy button with clipboard fallback + feedback state
+- [x] Initial content base: 8 prompts in prompts.json across 4 categories
+- [x] Verified: production build, mobile 375px no-overflow, copy interaction
 
 ## Later (post-launch, from the white paper's growth plan)
 
-- [ ] `/prompt/[slug]` pages for individual prompts (SEO + shareable links; Trending cards link to them)
+- [ ] `/prompt/[slug]` pages for individual prompts (SEO + shareable links)
 - [ ] Category SEO pages (`/prompts/personality-tests`, etc.)
-- [ ] Weekly "Trending this week" content refresh routine (edit `prompts.json` or point at Supabase)
 - [ ] Seasonal collection sections
 - [ ] Smart app banner / deep links once the app is live
+- [ ] Real social proof: ratings, install count, user results in the trust strip
