@@ -11,9 +11,7 @@ function Tile({ category, wide }: { category: Category; wide?: boolean }) {
         width={wide ? 1200 : 800}
         height={wide ? 800 : 600}
         loading="lazy"
-        className={`w-full rounded-[24px] object-cover ${
-          wide ? "aspect-12/5" : "aspect-8/5"
-        }`}
+        className="h-52 w-full rounded-[24px] object-cover md:h-64"
       />
       <div>
         <h3 className="text-lg font-extrabold">{category.name}</h3>

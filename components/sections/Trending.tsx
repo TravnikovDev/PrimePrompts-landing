@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Prompt } from "@/lib/types";
 import { withBase } from "@/lib/asset";
 import { Reveal } from "../Reveal";
@@ -33,7 +34,10 @@ export function Trending({ prompts }: { prompts: Prompt[] }) {
               key={prompt.id}
               className={`w-56 shrink-0 snap-center md:hover:z-10 ${tilts[i % tilts.length]}`}
             >
-              <div className="overflow-hidden rounded-[24px] border-4 border-obsidian bg-paper transition-transform duration-300 hover:rotate-0 hover:scale-105">
+              <Link
+                href={`/prompt/${prompt.id}/`}
+                className="block overflow-hidden rounded-[24px] border-4 border-obsidian bg-paper transition-transform duration-300 hover:rotate-0 hover:scale-105"
+              >
                 <img
                   src={withBase(prompt.image)}
                   alt={prompt.title}
@@ -50,7 +54,7 @@ export function Trending({ prompts }: { prompts: Prompt[] }) {
                     {prompt.title}
                   </p>
                 </div>
-              </div>
+              </Link>
             </div>
           ))}
         </div>

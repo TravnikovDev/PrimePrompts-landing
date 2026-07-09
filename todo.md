@@ -31,7 +31,7 @@ Ordered by impact on installs.
 ### Polish
 - [x] **Loosened scroll-reveal thresholds** (`amount: 0.1`)
 - [x] **Trending fan breathing room** — less overlap, softer tilts, labels bumped to 12px
-- [ ] **Category tile rhythm** — equalize text-block heights across bento tiles (minor, revisit with real imagery)
+- [x] **Category tile rhythm** — fixed tile image heights (`h-52 md:h-64`) so rows align regardless of column span
 
 ## Phase B — GitHub & deploy
 
@@ -50,12 +50,12 @@ Ordered by impact on installs.
 
 ## Phase D — Pre-launch QA
 
-- [ ] Mobile pass at 375px after Phase A changes (fan band, phone mockup, footer columns)
-- [ ] `prefers-reduced-motion` pass: page fully usable static
-- [ ] Keyboard + focus-ring pass over all interactive elements
-- [ ] Contrast audit: volt CTA text, charcoal body on white, black-on-gradient (WCAG AA)
-- [ ] Copy self-audit: reread every visible string; zero em-dashes, no filler verbs, no fake numbers
-- [ ] Lighthouse: LCP < 2.5s, CLS < 0.1, INP < 200ms; hero assets priority, below-fold lazy
+- [x] Mobile pass at 375px: home + prompt detail pages, no horizontal overflow, menu works
+- [x] `prefers-reduced-motion` pass: all Motion animations gated by `useReducedMotion`, smooth-scroll disabled via media query; remaining motion is hover-triggered only
+- [x] Keyboard + focus-ring pass: global volt `:focus-visible` ring, all interactive elements are native links/buttons with labels
+- [x] Contrast audit: charcoal body on white 9.7:1 ✓, black on gradient ✓. **Known deviation:** white CTA text on volt pink is ~3.3:1 (AA large-text only, below 4.5:1 for the 14 to 16px labels). This matches the Wizz reference exactly; fixing would require darkening the brand pink (e.g. #d61c7b, 4.9:1) on text-bearing buttons. Decide before launch
+- [x] Copy self-audit: zero em/en dashes (grep-verified), no filler verbs, no fake numbers
+- [ ] Lighthouse: LCP < 2.5s, CLS < 0.1, INP < 200ms — run against the live URL before launch
 
 ## Phase E — SEO & launch
 
@@ -75,7 +75,7 @@ Ordered by impact on installs.
 
 ## Later (post-launch, from the white paper's growth plan)
 
-- [ ] `/prompt/[slug]` pages for individual prompts (SEO + shareable links)
+- [x] `/prompt/[slug]` pages: 7 static detail pages with per-page metadata + OG image, copy button, "More to try" cross-links, app CTA; trending fan cards link to them; included in sitemap
 - [ ] Category SEO pages (`/prompts/personality-tests`, etc.)
 - [ ] Seasonal collection sections
 - [ ] Smart app banner / deep links once the app is live
