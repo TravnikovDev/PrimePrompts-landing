@@ -1,37 +1,24 @@
 @import "tailwindcss";
 
-:root {
-  --surface: #fafaf9;
-  --surface-raised: #ffffff;
-  --ink: #1c1917;
-  --ink-muted: #57534e;
-  --accent: #e11d48;
-  --accent-pressed: #be123c;
-  --line: #e7e5e4;
-}
+/* Wizz-style system per DESIGN.md: black-and-white editorial, volt pink as
+   the sole chromatic accent, light theme only. */
+@theme {
+  --color-volt: #ff3d9e;
+  --color-volt-pressed: #e02a8a;
+  --color-obsidian: #000000;
+  --color-paper: #ffffff;
+  --color-ash: #dadada;
+  --color-charcoal: #444444;
+  --color-onyx: #292929;
+  --color-mist: #eeeeee;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --surface: #0c0a09;
-    --surface-raised: #1c1917;
-    --ink: #fafaf9;
-    --ink-muted: #a8a29e;
-    --accent: #fb7185;
-    --accent-pressed: #f43f5e;
-    --line: #292524;
-  }
-}
+  --font-display: var(--font-archivo-black), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 
-@theme inline {
-  --color-surface: var(--surface);
-  --color-raised: var(--surface-raised);
-  --color-ink: var(--ink);
-  --color-ink-muted: var(--ink-muted);
-  --color-accent: var(--accent);
-  --color-accent-pressed: var(--accent-pressed);
-  --color-line: var(--line);
-  --font-sans: var(--font-outfit);
-  --font-mono: var(--font-jetbrains-mono);
+  --shadow-card: rgba(0, 0, 0, 0.05) 0px 1px 10px 0px;
+  --shadow-cta: rgba(0, 0, 0, 0.3) 0px 1px 30px 0px;
+  --shadow-ring: rgb(218, 218, 218) 0px 0px 0px 1px inset;
 }
 
 html {
@@ -45,16 +32,27 @@ html {
 }
 
 body {
-  background: var(--surface);
-  color: var(--ink);
+  background: var(--color-paper);
+  color: var(--color-obsidian);
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--surface-raised);
+  background: var(--color-volt);
+  color: var(--color-paper);
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--color-volt);
   outline-offset: 2px;
+}
+
+/* The hero is the system's single moment of color abundance: lavender, sky,
+   coral and amber blended like a sunset through frosted glass. Never reuse. */
+.hero-gradient {
+  background:
+    radial-gradient(65% 80% at 12% 8%, #c4b5fd 0%, transparent 60%),
+    radial-gradient(55% 70% at 88% 12%, #7dd3fc 0%, transparent 58%),
+    radial-gradient(60% 70% at 15% 92%, #fda4af 0%, transparent 55%),
+    radial-gradient(60% 70% at 85% 88%, #fcd34d 0%, transparent 58%),
+    linear-gradient(135deg, #ddd6fe 0%, #bae6fd 40%, #fecdd3 75%, #fde68a 100%);
 }

@@ -1,25 +1,23 @@
 import type { Category } from "@/lib/types";
 import { Reveal } from "../Reveal";
 
-function Cell({ category, large }: { category: Category; large?: boolean }) {
+function Tile({ category, wide }: { category: Category; wide?: boolean }) {
   return (
-    <article
-      className={`flex flex-col overflow-hidden rounded-2xl border border-line bg-raised shadow-lg shadow-stone-900/5 ${
-        large ? "md:col-span-2" : ""
-      }`}
-    >
+    <article className={`flex flex-col gap-3 ${wide ? "md:col-span-2" : ""}`}>
       {/* TODO: replace picsum placeholder with a real AI-generated preview */}
       <img
         src={category.image}
         alt={category.name}
-        width={large ? 1200 : 800}
-        height={large ? 800 : 600}
+        width={wide ? 1200 : 800}
+        height={wide ? 800 : 600}
         loading="lazy"
-        className={`w-full object-cover ${large ? "aspect-12/5" : "aspect-8/5"}`}
+        className={`w-full rounded-[24px] object-cover ${
+          wide ? "aspect-12/5" : "aspect-8/5"
+        }`}
       />
-      <div className="flex flex-col gap-1 p-5">
-        <h3 className="text-xl font-semibold">{category.name}</h3>
-        <p className="text-base text-ink-muted">{category.blurb}</p>
+      <div>
+        <h3 className="text-lg font-extrabold">{category.name}</h3>
+        <p className="text-sm leading-[1.5] text-charcoal">{category.blurb}</p>
       </div>
     </article>
   );
@@ -29,19 +27,22 @@ export function Categories({ categories }: { categories: Category[] }) {
   const [personality, images, creative, trending] = categories;
 
   return (
-    <section className="mx-auto max-w-6xl px-4 py-24 md:px-6 md:py-32">
-      <Reveal>
-        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+    <section id="categories" className="mx-auto max-w-[1200px] px-4 py-20">
+      <Reveal className="flex flex-col items-center gap-3 text-center">
+        <span className="text-sm font-semibold uppercase tracking-[0.05em] text-volt">
+          Four ways in
+        </span>
+        <h2 className="font-display text-4xl uppercase leading-none md:text-5xl">
           Something for every mood
         </h2>
       </Reveal>
 
-      <Reveal delay={0.1} className="mt-10">
-        <div className="grid gap-4 md:grid-cols-3">
-          <Cell category={personality} large />
-          <Cell category={images} />
-          <Cell category={creative} />
-          <Cell category={trending} large />
+      <Reveal delay={0.1} className="mt-12">
+        <div className="grid gap-6 md:grid-cols-3">
+          <Tile category={personality} wide />
+          <Tile category={images} />
+          <Tile category={creative} />
+          <Tile category={trending} wide />
         </div>
       </Reveal>
     </section>

@@ -1,33 +1,65 @@
 import type { Prompt } from "@/lib/types";
-import { PromptCard } from "../PromptCard";
 import { Reveal } from "../Reveal";
 
+const tilts = [
+  "-rotate-6",
+  "rotate-3",
+  "-rotate-2",
+  "rotate-6",
+  "-rotate-3",
+  "rotate-2",
+] as const;
+
+// Fanned, tilted showcase band per DESIGN.md's phone-mockup carousel:
+// overlapping frames at alternating angles, 24px image radii, no shadows,
+// the rotation carries the energy.
 export function Trending({ prompts }: { prompts: Prompt[] }) {
   return (
-    <section className="border-y border-line bg-raised py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-4 md:px-6">
-        <Reveal>
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-            Trending this week
-          </h2>
-          <p className="mt-3 max-w-[50ch] text-lg text-ink-muted">
-            A taste of the feed. The app updates with new prompts all the
-            time.
-          </p>
-        </Reveal>
-      </div>
+    <section id="trending" className="overflow-hidden py-20">
+      <Reveal className="mx-auto flex max-w-[1200px] flex-col items-center gap-3 px-4 text-center">
+        <span className="text-sm font-semibold uppercase tracking-[0.05em] text-volt">
+          Straight from the feed
+        </span>
+        <h2 className="font-display text-4xl uppercase leading-none md:text-5xl">
+          Trending this week
+        </h2>
+      </Reveal>
 
       <Reveal delay={0.1}>
-        <div className="mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 md:px-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]">
-          {prompts.map((prompt) => (
+        <div className="mt-16 flex snap-x snap-mandatory gap-2 overflow-x-auto px-8 py-10 md:justify-center md:gap-0 md:overflow-visible">
+          {prompts.map((prompt, i) => (
             <div
               key={prompt.id}
-              className="w-72 shrink-0 snap-start md:w-80"
+              className={`w-52 shrink-0 snap-center md:-mx-2 md:hover:z-10 ${tilts[i % tilts.length]}`}
             >
-              <PromptCard prompt={prompt} />
+              <div className="overflow-hidden rounded-[24px] border-4 border-obsidian bg-paper transition-transform duration-300 hover:rotate-0 hover:scale-105">
+                {/* TODO: replace picsum placeholder with a real AI-generated preview */}
+                <img
+                  src={prompt.image}
+                  alt={prompt.title}
+                  width={640}
+                  height={800}
+                  loading="lazy"
+                  className="aspect-3/4 w-full object-cover"
+                />
+                <div className="flex flex-col gap-1 p-4">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.05em] text-volt">
+                    {prompt.category}
+                  </span>
+                  <p className="text-sm font-bold leading-tight">
+                    {prompt.title}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
+      </Reveal>
+
+      <Reveal delay={0.15} className="mt-6 flex justify-center px-4">
+        <p className="max-w-[46ch] text-center text-base leading-[1.5] text-charcoal">
+          A taste of the feed. The app updates with new prompts all the time.
+        </p>
       </Reveal>
     </section>
   );

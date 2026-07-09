@@ -1,22 +1,31 @@
 import { Reveal } from "../Reveal";
 
-const lines = [
-  "Free to use.",
-  "No account needed.",
-  "You don't need to know anything about AI.",
-] as const;
-
+// Mission-style feature row per DESIGN.md: large display heading left,
+// eyebrow + bold statement + body stacked right.
 export function Reassurance() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-24 md:px-6 md:py-32">
-      <div className="flex flex-col gap-6">
-        {lines.map((line, i) => (
-          <Reveal key={line} delay={i * 0.08}>
-            <p className="text-3xl font-semibold tracking-tight md:text-4xl">
-              {line}
-            </p>
-          </Reveal>
-        ))}
+    <section className="mx-auto max-w-[1200px] px-4 py-20">
+      <div className="grid gap-10 md:grid-cols-2 md:gap-16">
+        <Reveal>
+          <h2 className="font-display text-4xl uppercase leading-none md:text-5xl">
+            Made for everyone
+          </h2>
+        </Reveal>
+
+        <Reveal delay={0.1} className="flex flex-col gap-4">
+          <span className="text-sm font-semibold uppercase tracking-[0.05em] text-volt">
+            No experience needed
+          </span>
+          <p className="text-lg font-bold leading-snug">
+            Free to use. No account. You don&apos;t need to know anything
+            about AI.
+          </p>
+          <p className="text-base leading-[1.5] text-charcoal">
+            Prime Prompts is not a tool for prompt engineers. It is a feed of
+            fun ideas for anyone who is curious about AI and just wants to
+            try something cool without homework.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

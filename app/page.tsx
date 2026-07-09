@@ -14,11 +14,11 @@ export default function Home() {
     <>
       <Nav />
       <main>
-        <Hero feed={data.trending.slice(0, 2)} />
-        <TryOne prompt={data.featured} />
+        <Hero />
         <HowItWorks />
-        <Categories categories={data.categories} />
+        <TryOne prompt={data.featured} />
         <Trending prompts={data.trending} />
+        <Categories categories={data.categories} />
         <Reassurance />
         <FinalCta />
       </main>

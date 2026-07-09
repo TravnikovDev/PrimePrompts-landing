@@ -1,11 +1,20 @@
 import type { Metadata } from "next";
-import { Outfit, JetBrains_Mono } from "next/font/google";
+import { Archivo_Black, Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+// PolySans Bulky substitute per DESIGN.md
+const archivoBlack = Archivo_Black({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-outfit",
+  weight: "400",
+  variable: "--font-archivo-black",
+  display: "swap",
+});
+
+// PolySans Median / Neutral substitute per DESIGN.md
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
+  variable: "--font-manrope",
   display: "swap",
 });
 
@@ -33,7 +42,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${jetbrainsMono.variable}`}>
+    <html
+      lang="en"
+      className={`${archivoBlack.variable} ${manrope.variable} ${jetbrainsMono.variable}`}
+    >
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

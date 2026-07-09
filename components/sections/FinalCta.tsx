@@ -3,11 +3,13 @@ import { Reveal } from "../Reveal";
 
 export function FinalCta() {
   return (
-    <section id="get" className="border-t border-line bg-raised">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-4 py-24 text-center md:px-6 md:py-32">
+    <section id="get" className="mx-auto max-w-[1200px] px-4 py-24">
+      <div className="flex flex-col items-center gap-10 text-center">
         <Reveal>
-          <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
-            What will you try today?
+          <h2 className="font-display text-4xl uppercase leading-[0.95] md:text-6xl">
+            What will you
+            <br />
+            try today?
           </h2>
         </Reveal>
         <Reveal delay={0.1}>

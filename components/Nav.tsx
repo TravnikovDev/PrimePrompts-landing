@@ -1,13 +1,33 @@
 export function Nav() {
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-surface/90 backdrop-blur-sm">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
-        <a href="#" className="text-lg font-bold tracking-tight">
-          Prime<span className="text-accent">Prompts</span>
+    <header className="fixed inset-x-0 top-4 z-40 px-4">
+      <div className="mx-auto flex max-w-[1200px] items-center justify-between rounded-full bg-obsidian py-2.5 pl-6 pr-2.5">
+        <a href="#" className="text-base font-bold tracking-tight text-paper">
+          Prime<span className="text-volt">Prompts</span>
         </a>
+        <nav className="hidden items-center gap-8 md:flex">
+          <a
+            href="#try"
+            className="text-sm text-paper transition-colors hover:text-volt"
+          >
+            Try it
+          </a>
+          <a
+            href="#trending"
+            className="text-sm text-paper transition-colors hover:text-volt"
+          >
+            Trending
+          </a>
+          <a
+            href="#categories"
+            className="text-sm text-paper transition-colors hover:text-volt"
+          >
+            Categories
+          </a>
+        </nav>
         <a
           href="#get"
-          className="rounded-full bg-accent px-5 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-accent-pressed active:scale-[0.98]"
+          className="rounded-xl bg-volt px-5 py-2.5 text-sm font-semibold text-paper transition-all duration-200 hover:bg-volt-pressed active:scale-[0.98]"
         >
           Get the app
         </a>
