@@ -10,7 +10,7 @@ Ordered by impact on installs.
 
 ### Product visibility (highest impact)
 - [x] **Show the actual app.** Phone mockup with a Trending-feed screen composed from the landing's own card components ([AppShowcase.tsx](components/sections/AppShowcase.tsx)); swap in real app screenshots when they exist
-- [ ] **Replace all picsum placeholders with real AI-generated previews.** Every trending card, the featured "try one" image, the phone-feed cards, and all 4 category tiles need on-topic imagery in one consistent style. **Needs generated assets from Roman** (no image-gen tool in this environment)
+- [x] **Replace all picsum placeholders with real AI-generated previews.** 11 images generated via gpt-image-1 (Roman's OpenAI key), compressed to JPEG in `public/images/prompts/`; regenerate individual ones anytime with the same approach
 - [x] **Official store badges.** Apple + Google badge artwork in `public/badges/`, used in hero and final CTA
   - [ ] Wire real store URLs when the app is published (currently `href="#"`)
 
