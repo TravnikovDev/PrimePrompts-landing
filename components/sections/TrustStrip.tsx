@@ -38,7 +38,7 @@ export function TrustStrip() {
               <span className="flex size-11 items-center justify-center rounded-full border border-obsidian">
                 <claim.icon className="size-5" />
               </span>
-              <h3 className="text-base font-bold">{claim.title}</h3>
+              <p className="text-base font-bold">{claim.title}</p>
               <p className="text-sm leading-[1.5] text-charcoal">
                 {claim.body}
               </p>

@@ -55,7 +55,8 @@ Ordered by impact on installs.
 - [x] Keyboard + focus-ring pass: global volt `:focus-visible` ring, all interactive elements are native links/buttons with labels
 - [x] Contrast audit: charcoal body on white 9.7:1 ✓, black on gradient ✓. **Known deviation:** white CTA text on volt pink is ~3.3:1 (AA large-text only, below 4.5:1 for the 14 to 16px labels). This matches the Wizz reference exactly; fixing would require darkening the brand pink (e.g. #d61c7b, 4.9:1) on text-bearing buttons. Decide before launch
 - [x] Copy self-audit: zero em/en dashes (grep-verified), no filler verbs, no fake numbers
-- [ ] Lighthouse: LCP < 2.5s, CLS < 0.1, INP < 200ms — run against the live URL before launch
+- [x] Lighthouse (live URL, 2026-07-10): Performance 92, Accessibility 94, Best Practices 100, SEO 100; CLS 0, TBT 20ms. LCP was 2.9s because the hero headline faded in; entrance is now slide-only so the headline paints immediately. Heading-order and NEW-tag contrast fixed. Remaining contrast flag is the volt CTA deviation documented above
+- [ ] **Fix the GitHub Pages deploy race (Roman, one click):** Settings → Pages → Source → "GitHub Actions". Currently set to "deploy from branch", so every push races a Jekyll build of the raw repo (which renders README as the homepage) against the real build workflow
 
 ## Phase E — SEO & launch
 
