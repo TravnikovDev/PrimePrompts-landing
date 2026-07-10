@@ -38,8 +38,7 @@ Ordered by impact on installs.
 - [x] git init, commits, SSH remote configured
 - [x] GitHub Actions workflow for Pages (static export, `BASE_PATH`)
 - [x] Repo created (by Roman), Pages enabled, deploys green
-- [x] Live at https://travnikovdev.github.io/PrimePrompts-landing/ (incl. /privacy/, /terms/, badges, OG image)
-- [ ] Later: point primeprompts.app custom domain, remove `BASE_PATH` from workflow
+- [x] Live at https://primeprompts.app (custom domain via Namecheap DNS + `public/CNAME`; `BASE_PATH` removed from workflow)
 
 ## Phase C — CTA & content finalization
 

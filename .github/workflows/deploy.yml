@@ -24,11 +24,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # Served from the primeprompts.app custom domain root: no BASE_PATH.
       - run: npm run build
-        env:
-          # GitHub Pages serves the site from /<repo-name>.
-          # Remove this once primeprompts.app is set up as a custom domain.
-          BASE_PATH: /PrimePrompts-landing
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out

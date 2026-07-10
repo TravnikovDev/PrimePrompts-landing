@@ -20,4 +20,4 @@ npm run build   # static export to ./out
 
 ## Deployment
 
-Pushes to `main` deploy to GitHub Pages via [.github/workflows/deploy.yml](.github/workflows/deploy.yml). The workflow sets `BASE_PATH=/PrimePrompts-landing`; remove that env var once the primeprompts.app custom domain is configured.
+Pushes to `main` deploy to GitHub Pages via [.github/workflows/deploy.yml](.github/workflows/deploy.yml), served at [primeprompts.app](https://primeprompts.app) (custom domain, `public/CNAME`).
