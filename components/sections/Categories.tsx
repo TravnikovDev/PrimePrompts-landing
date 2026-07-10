@@ -1,23 +1,29 @@
+import Link from "next/link";
 import type { Category } from "@/lib/types";
 import { withBase } from "@/lib/asset";
 import { Reveal } from "../Reveal";
 
 function Tile({ category, wide }: { category: Category; wide?: boolean }) {
   return (
-    <article className={`flex flex-col gap-3 ${wide ? "md:col-span-2" : ""}`}>
+    <Link
+      href={`/category/${category.id}/`}
+      className={`group flex flex-col gap-3 ${wide ? "md:col-span-2" : ""}`}
+    >
       <img
         src={withBase(category.image)}
         alt={category.name}
         width={wide ? 1200 : 800}
         height={wide ? 800 : 600}
         loading="lazy"
-        className="h-52 w-full rounded-[24px] object-cover md:h-64"
+        className="h-52 w-full rounded-[24px] object-cover transition-transform duration-300 group-hover:scale-[1.02] md:h-64"
       />
       <div>
-        <h3 className="text-lg font-extrabold">{category.name}</h3>
+        <h3 className="text-lg font-extrabold group-hover:text-volt-pressed">
+          {category.name}
+        </h3>
         <p className="text-sm leading-[1.5] text-charcoal">{category.blurb}</p>
       </div>
-    </article>
+    </Link>
   );
 }
 

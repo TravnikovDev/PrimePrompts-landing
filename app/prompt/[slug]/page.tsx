@@ -42,9 +42,11 @@ export default async function PromptPage({
   const prompt = getPrompt(slug);
   if (!prompt) notFound();
 
-  const more = allPrompts()
-    .filter((p) => p.id !== prompt.id)
-    .slice(0, 3);
+  const others = allPrompts().filter((p) => p.id !== prompt.id);
+  const more = [
+    ...others.filter((p) => p.categoryId === prompt.categoryId),
+    ...others.filter((p) => p.categoryId !== prompt.categoryId),
+  ].slice(0, 3);
 
   return (
     <>

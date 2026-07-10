@@ -4,6 +4,8 @@ export type Prompt = {
   description: string;
   promptText: string;
   category: string;
+  categoryId: string;
+  trending: boolean;
   image: string;
 };
 

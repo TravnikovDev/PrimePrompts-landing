@@ -1,4 +1,4 @@
-import data from "@/data/prompts.json";
+import { allCategories, getFeatured, trendingPrompts } from "@/lib/prompts";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
@@ -33,10 +33,10 @@ export default function Home() {
       <main>
         <Hero />
         <TrustStrip />
-        <AppShowcase feed={data.trending.slice(0, 2)} />
-        <TryOne prompt={data.featured} />
-        <Trending prompts={data.trending} />
-        <Categories categories={data.categories} />
+        <AppShowcase feed={trendingPrompts().slice(0, 2)} />
+        <TryOne prompt={getFeatured()} />
+        <Trending prompts={trendingPrompts()} />
+        <Categories categories={allCategories()} />
         <Reassurance />
         <FinalCta />
       </main>

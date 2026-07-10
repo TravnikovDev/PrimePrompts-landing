@@ -75,8 +75,8 @@ Ordered by impact on installs.
 
 ## Later (post-launch, from the white paper's growth plan)
 
-- [x] `/prompt/[slug]` pages: 7 static detail pages with per-page metadata + OG image, copy button, "More to try" cross-links, app CTA; trending fan cards link to them; included in sitemap
-- [ ] Category SEO pages (`/prompts/personality-tests`, etc.)
+- [x] `/prompt/[slug]` pages: 13 static detail pages with per-page metadata + OG image, copy button, same-category "More to try" cross-links, app CTA; trending fan cards link to them; included in sitemap
+- [x] Category SEO pages (`/category/[slug]`, 4 pages): prompt grid + app CTA, bento tiles link to them, in sitemap. Content base expanded to 13 prompts (data model: single `prompts[]` with `categoryId` + `trending` flags)
 - [ ] Seasonal collection sections
 - [ ] Smart app banner / deep links once the app is live
 - [ ] Real social proof: ratings, install count, user results in the trust strip

@@ -1,19 +1,24 @@
 {
-  "featured": {
-    "id": "decade-personality",
-    "title": "Which decade is your personality from?",
-    "description": "A playful quiz that reads you better than your friends do.",
-    "promptText": "Ask me 10 quick questions, one at a time. Then tell me which decade my personality belongs in, and explain why with a bit of humor.",
-    "category": "Personality Tests",
-    "image": "/images/prompts/decade-personality.jpg"
-  },
-  "trending": [
+  "featuredId": "decade-personality",
+  "prompts": [
+    {
+      "id": "decade-personality",
+      "title": "Which decade is your personality from?",
+      "description": "A playful quiz that reads you better than your friends do.",
+      "promptText": "Ask me 10 quick questions, one at a time. Then tell me which decade my personality belongs in, and explain why with a bit of humor.",
+      "category": "Personality Tests",
+      "categoryId": "personality-tests",
+      "trending": false,
+      "image": "/images/prompts/decade-personality.jpg"
+    },
     {
       "id": "renaissance-portrait",
       "title": "Turn yourself into a renaissance portrait",
       "description": "The classic. Works in any image generator.",
       "promptText": "A renaissance oil painting portrait of [describe yourself], dramatic candlelight, rich fabrics, ornate gold frame, museum quality.",
       "category": "Image Prompts",
+      "categoryId": "image-prompts",
+      "trending": true,
       "image": "/images/prompts/renaissance-portrait.jpg"
     },
     {
@@ -22,6 +27,8 @@
       "description": "Make your Tuesday sound like a blockbuster.",
       "promptText": "Write a dramatic movie trailer voiceover script about my ordinary day. I will describe my day, you make it sound epic.",
       "category": "Creative Ideas",
+      "categoryId": "creative-ideas",
+      "trending": true,
       "image": "/images/prompts/movie-trailer-day.jpg"
     },
     {
@@ -30,6 +37,8 @@
       "description": "Five guests, living or dead. What do your picks say about you?",
       "promptText": "Ask me to pick 5 dinner guests, living or dead. Then analyze what my choices say about my personality.",
       "category": "Personality Tests",
+      "categoryId": "personality-tests",
+      "trending": true,
       "image": "/images/prompts/dinner-party-test.jpg"
     },
     {
@@ -38,6 +47,8 @@
       "description": "Everyone needs a desk pet.",
       "promptText": "A tiny fluffy dragon the size of a hamster sleeping on a cluttered office desk, soft morning light, photorealistic macro shot.",
       "category": "Image Prompts",
+      "categoryId": "image-prompts",
+      "trending": true,
       "image": "/images/prompts/tiny-desk-dragon.jpg"
     },
     {
@@ -46,6 +57,8 @@
       "description": "Honest feedback on your life choices, plus dinner.",
       "promptText": "I will list what is in my fridge. Rate my life choices based on it, then suggest one dinner I can actually make tonight.",
       "category": "Creative Ideas",
+      "categoryId": "creative-ideas",
+      "trending": true,
       "image": "/images/prompts/roast-my-fridge.jpg"
     },
     {
@@ -54,7 +67,69 @@
       "description": "Laser background included, obviously.",
       "promptText": "A 1990s high school yearbook portrait of [describe yourself], soft studio lighting, laser beam background, slight film grain.",
       "category": "Image Prompts",
+      "categoryId": "image-prompts",
+      "trending": true,
       "image": "/images/prompts/yearbook-90s.jpg"
+    },
+    {
+      "id": "color-test",
+      "title": "The color test",
+      "description": "Seven questions. One color. Surprisingly accurate.",
+      "promptText": "Ask me 7 quick either-or questions, one at a time. Then tell me which color matches my personality and what it says about me.",
+      "category": "Personality Tests",
+      "categoryId": "personality-tests",
+      "trending": false,
+      "image": "/images/prompts/color-test.jpg"
+    },
+    {
+      "id": "playlist-psychologist",
+      "title": "What your playlist says about you",
+      "description": "Your most played songs, analyzed by three very different experts.",
+      "promptText": "I will paste my 10 most played songs. Tell me what a psychologist, a poet, and my grandmother would each conclude about me.",
+      "category": "Personality Tests",
+      "categoryId": "personality-tests",
+      "trending": false,
+      "image": "/images/prompts/playlist-psychologist.jpg"
+    },
+    {
+      "id": "pet-royal-portrait",
+      "title": "Your pet as royalty",
+      "description": "Crown, cape, palace. Your pet deserves this.",
+      "promptText": "A majestic royal oil painting portrait of my pet [describe your pet] wearing a golden crown and velvet cape, ornate palace interior, dramatic lighting.",
+      "category": "Image Prompts",
+      "categoryId": "image-prompts",
+      "trending": false,
+      "image": "/images/prompts/pet-royal-portrait.jpg"
+    },
+    {
+      "id": "city-snowglobe",
+      "title": "Your city in a snow globe",
+      "description": "Tiny landmarks, cozy lights, falling snow.",
+      "promptText": "A miniature version of [your city] inside a glass snow globe, tiny glowing landmarks, cozy warm lights, falling snow, macro photograph.",
+      "category": "Image Prompts",
+      "categoryId": "image-prompts",
+      "trending": false,
+      "image": "/images/prompts/city-snowglobe.jpg"
+    },
+    {
+      "id": "bedtime-hero-story",
+      "title": "Your houseplant saves the world",
+      "description": "A two-minute bedtime story starring whatever is on your desk.",
+      "promptText": "Write a short bedtime story where my [houseplant, coffee mug or pet] secretly saves the world every night. Make it warm and a little funny.",
+      "category": "Creative Ideas",
+      "categoryId": "creative-ideas",
+      "trending": false,
+      "image": "/images/prompts/bedtime-hero-story.jpg"
+    },
+    {
+      "id": "country-song-day",
+      "title": "A country song about your day",
+      "description": "Your Tuesday deserves a soundtrack.",
+      "promptText": "Write a short country song about my day. I will describe what happened, you make it heartfelt and slightly dramatic.",
+      "category": "Creative Ideas",
+      "categoryId": "creative-ideas",
+      "trending": false,
+      "image": "/images/prompts/country-song-day.jpg"
     }
   ],
   "categories": [
